@@ -29,6 +29,7 @@ public class Bar {
     private int estatus;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
+    
     private Date horario_abierto;
     private Date horario_cerrado;
 

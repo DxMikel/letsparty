@@ -28,7 +28,7 @@ public class Usuario {
     private String apellido_paterno;
     private String apellido_materno;
     private String correo;
-    private String contraseña;
+    private String contrasenia;
     private int tipo_ususario;
     private String telefono;
     private String genero;
@@ -76,12 +76,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public int getTipo_ususario() {
@@ -126,7 +126,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + ", tipo_ususario=" + tipo_ususario + ", telefono=" + telefono + ", genero=" + genero + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + '}';
+        return "Usuario{" + "id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + ", correo=" + correo + ", contrase\u00f1a=" + contrasenia + ", tipo_ususario=" + tipo_ususario + ", telefono=" + telefono + ", genero=" + genero + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + '}';
     }
     
 
