@@ -11,13 +11,13 @@
         <div class="login-box">
             <img class="avatar" src="img/esfera.jpg" alt="Logo de Let´s Go Party">
             <h1>Let´s Party</h1>
-            <form action="#">
+            <form action="loginservlet" method="POST">
                 <!--Username-->
                 <label for="username">Usuario</label>
-                <input type="text" placeholder="enter username">
+                <input type="text" placeholder="enter username" name="email">
                 <!--Password-->
                 <label for="password">Contraseña</label>
-                <input type="password" placeholder="enter password">
+                <input type="password" placeholder="enter password" name="password">
                 <input type="submit" value="Let´s Go">
                 <a href="#">¿Olvidaste tu contraseña?</a><br>
                 <a href="#">¿No tienes una cuenta?</a>
