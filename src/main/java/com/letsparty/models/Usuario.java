@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  * @author Lesser
  */
 @Entity
-@Table(schema = "letsparty" , name= "usuario")
+@Table(schema = "letsparty" , name= "usuarios")
 public class Usuario {
          @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Usuario {
     private String apellido_materno;
     private String correo;
     private String contrasenia;
-    private int tipo_ususario;
+    private int tipo_usuario;
     private String telefono;
     private String genero;
     private int estatus;
@@ -80,16 +80,16 @@ public class Usuario {
         return contrasenia;
     }
 
-    public void setContraseña(String contrasenia) {
+    public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
-    public int getTipo_ususario() {
-        return tipo_ususario;
+    public int getTipo_usuario() {
+        return tipo_usuario;
     }
 
-    public void setTipo_ususario(int tipo_ususario) {
-        this.tipo_ususario = tipo_ususario;
+    public void setTipo_usuario(int tipo_usuario) {
+        this.tipo_usuario = tipo_usuario;
     }
 
     public String getTelefono() {
@@ -126,7 +126,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + ", correo=" + correo + ", contrase\u00f1a=" + contrasenia + ", tipo_ususario=" + tipo_ususario + ", telefono=" + telefono + ", genero=" + genero + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + '}';
+        return "Usuario{" + "id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + ", correo=" + correo + ", contrase\u00f1a=" + contrasenia + ", tipo_usuario=" + tipo_usuario + ", telefono=" + telefono + ", genero=" + genero + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + '}';
     }
     
 

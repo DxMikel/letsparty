@@ -6,6 +6,7 @@
 package com.letsparty.models;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +33,8 @@ public class Bar {
     
     private Date horario_abierto;
     private Date horario_cerrado;
-
+    
+    @Column(name = "id_comentarios")
     private int id_comentario;
     private int id_administrador;
     private int id_tematica;
