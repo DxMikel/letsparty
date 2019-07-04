@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  * @author Lesser
  */
 @Entity
-@Table(schema = "letsparty" , name= "reservacion")
+@Table(schema = "letsparty" , name= "producto")
 
 public class Producto {
     @Id
@@ -32,7 +32,7 @@ public class Producto {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
     
-    private int id_categoria;
+    //private int id_categoria;
 
     public int getId_producto() {
         return id_producto;
@@ -82,17 +82,10 @@ public class Producto {
         this.fecha_registro = fecha_registro;
     }
 
-    public int getId_categoria() {
-        return id_categoria;
-    }
-
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
-    }
-
+  
     @Override
     public String toString() {
-        return "Producto{" + "id_producto=" + id_producto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + ", id_categoria=" + id_categoria + '}';
+        return "Producto{" + "id_producto=" + id_producto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + '}';
     }
     
     
