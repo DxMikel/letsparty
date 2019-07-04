@@ -24,13 +24,16 @@ import javax.persistence.TemporalType;
 public class Comentario {
     @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private int id_comentario;
     private String descripcion;
     private int calificacion;
     private int estado;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
+    
     private int id_usuario;
+    private int id_bar;
 
     public int getId_comentario() {
         return id_comentario;
@@ -78,6 +81,19 @@ public class Comentario {
 
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public int getId_bar() {
+        return id_bar;
+    }
+
+    public void setId_bar(int id_bar) {
+        this.id_bar = id_bar;
+    }
+
+    @Override
+    public String toString() {
+        return "Comentario{" + "id_comentario=" + id_comentario + ", descripcion=" + descripcion + ", calificacion=" + calificacion + ", estado=" + estado + ", fecha_registro=" + fecha_registro + ", id_usuario=" + id_usuario + ", id_bar=" + id_bar + '}';
     }
     
     
