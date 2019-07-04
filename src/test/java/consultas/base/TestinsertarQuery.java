@@ -7,7 +7,7 @@ package consultas.base;
 
 import com.letsparty.models.Bar;
 import com.letsparty.models.Categoria;
-import com.letsparty.models.Comentario;
+//import com.letsparty.models.Comentario;
 import com.letsparty.models.Producto;
 import com.letsparty.models.Reservacion;
 import com.letsparty.models.Tematica;
@@ -259,7 +259,7 @@ public class TestinsertarQuery {
         entityManager.getTransaction().begin();
  
         
-        Comentario molesto = new Comentario();
+/*        Comentario molesto = new Comentario();
          molesto.setCalificacion(10);
          molesto.setEstado(1);
          molesto.setDescripcion("el bar esta bien culero por el servicio");
@@ -273,7 +273,7 @@ public class TestinsertarQuery {
        
          entityManager.persist(molesto);
          assertTrue(molesto.getId_comentario() > 0);
-         System.out.println("Se persistio un comentario");
+         System.out.println("Se persistio un comentario");*/
                  
         entityManager.getTransaction().commit();
         
