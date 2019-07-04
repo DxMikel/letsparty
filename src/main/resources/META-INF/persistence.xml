@@ -19,11 +19,11 @@
         <properties> 
         <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
            <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>-->
-           <property name="hibernate.connection.url" value="jdbc:mysql://127.0.0.1:3306/letsparty?useUnicode=true;&amp;useJDBCCompliantTimezoneShift=true;&amp;useLegacyDatetimeCode=false;&amp;useSSL=FALSE&amp;serverTimezone=UTC"/>
+           <property name="hibernate.connection.url" value="jdbc:mysql://127.0.0.1:3306/letsparty_test2?useUnicode=true;&amp;useJDBCCompliantTimezoneShift=true;&amp;useLegacyDatetimeCode=false;&amp;useSSL=FALSE&amp;serverTimezone=UTC"/>
            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/musicalist?useUnicode=true;&amp;useJDBCCompliantTimezoneShift=true;&amp;useLegacyDatetimeCode=false;&amp;serverTimezone=UTC"/>-->
            <property name="hibernate.connection.username" value="root"/> 
            <!--<property name="javax.persistence.jdbc.user" value="root"/>-->
-           <property name="hibernate.connection.password" value="barbarillo"/>
+           <property name="hibernate.connection.password" value=""/>
             <!--<property name="javax.persistence.jdbc.password" value="barbarillo"/>-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.show_sql" value="true"/>

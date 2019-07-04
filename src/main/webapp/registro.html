@@ -1,0 +1,59 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Registro</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="styles/registro.css">
+
+    </head>
+
+    <body>
+        <div class="img"></div>
+        <div class="login-box-reg">
+            <h1>Registro</h1>
+            <form action="registro" method="POST">
+                <p>
+                    <label for="username"> <i class="far fa-user"></i></label>
+                    <input type="text" name="username" placeholder="Nombres">
+                </p>
+                <p>
+                    <label for="username"><i class="far fa-user"></i></label>
+                    <input type="text" name="usernameApellido" placeholder="Apellidos">
+                </p>
+                <p>
+                    <label for="email"><i class="far fa-envelope"></i></label>
+                    <input type="text" name="email" placeholder="E-mail">
+                </p>
+                <p>
+                    <label for="password"><i class="fas fa-unlock-alt"></i></label>
+                    <input type="password" name="password" placeholder="Contraseña">
+                </p>
+                <p>
+                    <label for="password-rev"><i class="fas fa-unlock-alt"></i></label>
+                    <input type="password" name="password-rev" placeholder="Confirmar Contraseña">
+                </p>
+                <div class="form-inline">
+                    <i class="fas fa-venus-mars"></i>
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Genero</label>
+                    <select class="custom-select my-1 mr-sm-2" name="genero">
+                        <option selected>Seleccionar</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otro">Otro</option>
+                    </select>              
+                </div>
+                <br>
+
+                <input type="submit" value=" Go Party!" class="button">
+                <a>¿Ya tienes una cuenta?<a class="link" href="index.html">Iniciar sesión </a>
+                    <a>Condiciones de uso y politicas de privacidad</a>
+            </form>
+        </div>
+
+
+    </body>
+
+</html>

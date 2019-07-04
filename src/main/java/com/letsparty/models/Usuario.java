@@ -35,7 +35,9 @@ public class Usuario {
     private int estatus;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
-
+    
+    public Usuario(){}
+    
     public int getId_usuario() {
         return id_usuario;
     }

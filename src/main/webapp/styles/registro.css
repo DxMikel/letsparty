@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes slide {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
+
+.img{
+    /*background: url(img/lobby-bar.jpg) no-repeat center top ; */
+    /* The image used */
+    background-image: url("../img/lobby-bar.jpg");
+
+    /* Add the blur effect */
+    opacity: 0.85;
+    /*filter:alpha(opacity= 50);*/
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+
+    -webkit-animation: slide 80s linear alternate infinite;
+
+
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-box-reg{
+    width: 380px;     
+    background: hsla(212, 59%, 32%, 0.3);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px, 30px;
+    border-radius: 15px;
+    margin:10px;
+}
+
+.login-box-reg:hover{
+    background: hsla(212, 59%, 32%, 0.8);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255, 0.836);
+    opacity: 1; /* Firefox */
+}
+
+.login-box-reg h1{
+    margin: 0;
+    padding:  20 0 15px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login-box-reg label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;    
+    text-align: center;
+}
+
+.login-box-reg input{
+    height: 480px;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 20px;   
+    margin-right: 20px;
+}
+
+.login-box-reg input[type= "text"],
+.login-box-reg input[type= "email"],
+.login-box-reg input[type= "text"],
+.login-box-reg input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #fff;
+    font-size: 16px;
+    text-align: start;
+    padding: 0;
+}
+
+.login-box-reg input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(27, 27, 156);
+    color: aquamarine;
+    font-size: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.login-box-reg input[type="submit"]:hover{
+    color: #fff;
+    background: #3232ff;
+    transition: background-color 2s;
+}
+
+.login-box-reg a{   
+    margin-left: 32px;
+    margin-right: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(235, 219, 219);
+}
+
+.login-box-reg .link:hover {
+    /* font-size: 18px;*/
+    color: rgb(247, 247, 247);
+    text-align: justify;
+}
+
+.login-box-reg p{
+    display: flex;
+    align-items: center;
+    margin-left: 7%;
+    margin-top: 0%;  
+    width: 90%;
+}
+
+.login-box-reg .form-inline{
+    margin-left: 32px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.login-box-reg #inlineFormCustomSelectPref{
+    background-color: hsla(245, 75%, 97%, 0.548);
+    border-radius: 15px;
+    text-emphasis-color: black;
+}
