@@ -23,7 +23,7 @@ import org.junit.Test;
  */
 public class TestSelectQuery {
 private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
-    //@Test
+    @Test
 public void testSelect() {
     
     EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -57,7 +57,8 @@ public void testSelect() {
         System.out.println(ubicacion1);
 
         
-       Query queryUsuario = entityManager.createQuery("SELECT u FROM Usuario u where u.correo = :correo  AND u.contrasenia= :contrasenia");
+       Query queryUsuario = entityManager.createQuery("SELECT u FROM Usuario u where "
+               + "u.correo = :correo  AND u.contrasenia= :contrasenia");
        queryUsuario.setParameter("correo", "julioCampos@gmail.com");
                 String contrasenia = ("julio12352");
                 assertNotNull(queryUsuario);

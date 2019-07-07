@@ -34,8 +34,8 @@ public class Bar {
     private Date horario_abierto;
     private Date horario_cerrado;
     
-    @Column(name = "id_comentarios")
-    private int id_comentario;
+   
+    
     private int id_administrador;
     private int id_tematica;
     private int id_categoria;
@@ -97,14 +97,6 @@ public class Bar {
         this.horario_cerrado = horario_cerrado;
     }
 
-    public int getId_comentario() {
-        return id_comentario;
-    }
-
-    public void setId_comentario(int id_comentario) {
-        this.id_comentario = id_comentario;
-    }
-
     public int getId_administrador() {
         return id_administrador;
     }
@@ -139,7 +131,7 @@ public class Bar {
 
     @Override
     public String toString() {
-        return "Bar{" + "id_bar=" + id_bar + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + ", horario_abierto=" + horario_abierto + ", horario_cerrado=" + horario_cerrado + ", id_comentario=" + id_comentario + ", id_administrador=" + id_administrador + ", id_tematica=" + id_tematica + ", id_categoria=" + id_categoria + ", id_ubicacion=" + id_ubicacion + '}';
+        return "Bar{" + "id_bar=" + id_bar + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + ", horario_abierto=" + horario_abierto + ", horario_cerrado=" + horario_cerrado + ", id_administrador=" + id_administrador + ", id_tematica=" + id_tematica + ", id_categoria=" + id_categoria + ", id_ubicacion=" + id_ubicacion + '}';
     }
     
     

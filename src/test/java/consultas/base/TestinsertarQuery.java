@@ -30,7 +30,7 @@ public class TestinsertarQuery {
     private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
     
     
-    //@Test
+  // @Test
        public void testUsuarioQuery(){
            
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -44,13 +44,13 @@ public class TestinsertarQuery {
         entityManager.getTransaction().begin();
 
         Usuario julio = new Usuario();
-         julio.setNombre("Julio");
-         julio.setApellido_paterno("Campos");
-         julio.setApellido_materno("Lopez");
-         julio.setCorreo("julioCampos@gmail.com");
-         julio.setContrasenia("julio12352");
+         julio.setNombre("Julioo");
+         julio.setApellido_paterno("Campoos");
+         julio.setApellido_materno("Lopezz");
+         julio.setCorreo("julioCampo@gmail.com");
+         julio.setContrasenia("julio123521");
          julio.setTipo_usuario(1);
-         julio.setTelefono("3353532826");
+         julio.setTelefono("3353532822");
          julio.setGenero("M");
          julio.setFecha_registro(new Date());
         
@@ -68,6 +68,7 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }
+       
      //@Test  
        public void testBarQuery(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -87,7 +88,7 @@ public class TestinsertarQuery {
 
         
         //necesita comentario, tematica, ubicacion, categoria, administrador
-         bienvenido_pariente.setId_comentario(1);
+        
          bienvenido_pariente.setId_tematica(1);
          bienvenido_pariente.setId_ubicacion(1);
          bienvenido_pariente.setId_categoria(1);
@@ -105,7 +106,7 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }
-       //@Test
+      // @Test
        public void testTematicaQuery(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         assertNotNull(emf);
@@ -207,7 +208,7 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }    
-    //@Test
+    @Test
     public void testReservacionQuery(){
            
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -229,7 +230,7 @@ public class TestinsertarQuery {
          hoydepeda.setFecha_reservacion(new Date());
          //necesita usuario, bar, cover y area
          hoydepeda.setId_usuario(1);
-         hoydepeda.setId_bar(1);
+         hoydepeda.setId_bar(2);
          hoydepeda.setId_cover(1);
          hoydepeda.setId_area(1);
          System.out.println("Se creo una reservacion");
@@ -282,7 +283,7 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }    
-    //@Test
+   // @Test
         public void testCategoriaQuery(){
            
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
