@@ -18,5 +18,6 @@ public interface DAO<T> {
     void nuevo(T t);
     void actualizar(T t, String[] parametros);
     void borrar(T t);
-    void nuevo();
+    List<T> obtenerTodo(long id);
+    //void nuevo();
 }
