@@ -7,6 +7,7 @@ package consultas.base;
 
 import com.letsparty.models.Bar;
 import com.letsparty.models.Categoria;
+import com.letsparty.models.Comentario;
 //import com.letsparty.models.Comentario;
 import com.letsparty.models.Producto;
 import com.letsparty.models.Reservacion;
@@ -208,7 +209,7 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }    
-    @Test
+    //@Test
     public void testReservacionQuery(){
            
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -260,7 +261,7 @@ public class TestinsertarQuery {
         entityManager.getTransaction().begin();
  
         
-/*        Comentario molesto = new Comentario();
+      Comentario molesto = new Comentario();
          molesto.setCalificacion(10);
          molesto.setEstado(1);
          molesto.setDescripcion("el bar esta bien culero por el servicio");
@@ -268,13 +269,13 @@ public class TestinsertarQuery {
 
         
          //necesita usuario, bar
-         molesto.setId_usuario(1);
-         molesto.setId_bar(1);
+         molesto.setId_usuario(3);
+         molesto.setId_bar(2);
          System.out.println("Se creo un comentario ");
        
          entityManager.persist(molesto);
          assertTrue(molesto.getId_comentario() > 0);
-         System.out.println("Se persistio un comentario");*/
+         System.out.println("Se persistio un comentario");
                  
         entityManager.getTransaction().commit();
         

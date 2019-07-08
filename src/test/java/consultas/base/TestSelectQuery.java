@@ -5,7 +5,7 @@
  */
 package consultas.base;
 
-import com.letsparty.dao.UsuarioDAOImp;
+//import com.letsparty.dao.UsuarioDAOImp;
 import com.letsparty.models.Categoria;
 import com.letsparty.models.Ubicacion;
 import com.letsparty.models.Usuario;
@@ -57,7 +57,8 @@ public class TestSelectQuery {
         List<Categoria> categorias = queryCategoria.getResultList();
         assertFalse(categorias.isEmpty());
         for (Categoria categoria : categorias) {
-            System.out.println(categoria);
+            System.out.println(categoria.getId_categoria());
+            System.out.println(categoria.getDescripcion());
         }
         System.out.println("");
         Ubicacion ubicacion1 = entityManager.find(Ubicacion.class, 1);
@@ -83,17 +84,11 @@ public class TestSelectQuery {
                 for ( Usuario usuario1 : usuarios){
                     System.out.println(usuario1);
                 }
-}
 
-        Query queryListaUsuario = entityManager.createQuery("FROM Usuario u");
-        assertNotNull(queryListaUsuario);
-        List<Usuario> usuarios = queryListaUsuario.getResultList();
-        for (Usuario usuario1 : usuarios) {
-            System.out.println(usuario1);
-        }
+
     }
 
-    @Test
+    //@Test
     public void testBuscar() {
         Query query = entityManager.createQuery("from Usuario u where u.correo = :correoUsuario and u.contrasenia= :contrasenia");
         query.setParameter("correoUsuario", "a@a.com");
