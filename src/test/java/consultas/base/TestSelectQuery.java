@@ -5,7 +5,7 @@
  */
 package consultas.base;
 
-import com.letsparty.dao.UsuarioDAOImp;
+//import com.letsparty.dao.UsuarioDAOImp;
 import com.letsparty.models.Categoria;
 import com.letsparty.models.Ubicacion;
 import com.letsparty.models.Usuario;
@@ -25,6 +25,7 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class TestSelectQuery {
 
+/*
     private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
 //private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -34,6 +35,7 @@ public class TestSelectQuery {
     public void testSelect() {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+
         assertNotNull(emf);
         System.out.println("Se creo un EntityManagerFactory");
 
@@ -55,7 +57,8 @@ public class TestSelectQuery {
         List<Categoria> categorias = queryCategoria.getResultList();
         assertFalse(categorias.isEmpty());
         for (Categoria categoria : categorias) {
-            System.out.println(categoria);
+            System.out.println(categoria.getId_categoria());
+            System.out.println(categoria.getDescripcion());
         }
         System.out.println("");
         Ubicacion ubicacion1 = entityManager.find(Ubicacion.class, 1);
@@ -71,15 +74,29 @@ public class TestSelectQuery {
         assertNotNull(usuario);
         System.out.println(usuario);
 
-        Query queryListaUsuario = entityManager.createQuery("FROM Usuario u");
-        assertNotNull(queryListaUsuario);
-        List<Usuario> usuarios = queryListaUsuario.getResultList();
-        for (Usuario usuario1 : usuarios) {
-            System.out.println(usuario1);
-        }
+        
+       Query queryUsuario = entityManager.createQuery("SELECT u FROM Usuario u where "
+               + "u.correo = :correo  AND u.contrasenia= :contrasenia");
+       queryUsuario.setParameter("correo", "julioCampos@gmail.com");
+                String contrasenia = ("julio12352");
+                assertNotNull(queryUsuario);
+                queryUsuario.setParameter("contrasenia", contrasenia );
+                Usuario usuario = (Usuario) queryUsuario.getSingleResult();
+                assertNotNull(usuario);
+                System.out.println(usuario);
+      
+                
+                Query queryListaUsuario = entityManager.createQuery("FROM Usuario u");
+                assertNotNull(queryListaUsuario);
+                List<Usuario> usuarios = queryListaUsuario.getResultList();
+                for ( Usuario usuario1 : usuarios){
+                    System.out.println(usuario1);
+                }
+
+
     }
 
-    @Test
+    //@Test
     public void testBuscar() {
         Query query = entityManager.createQuery("from Usuario u where u.correo = :correoUsuario and u.contrasenia= :contrasenia");
         query.setParameter("correoUsuario", "a@a.com");
@@ -120,5 +137,5 @@ public class TestSelectQuery {
         } else {
             System.out.println("It does not match");
         }
-    }
+    }*/
 }

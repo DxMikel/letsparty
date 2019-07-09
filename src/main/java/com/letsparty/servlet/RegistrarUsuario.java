@@ -62,7 +62,7 @@ public class RegistrarUsuario extends HttpServlet {
         nuevoUsuario.setFecha_registro(new Date());
 
         //System.out.println(nuevoUsuario);
-        usuario.login("a@a.com", "123");
+        //usuario.login("a@a.com", "123");
 
         //usuario.nuevo(nuevoUsuario);
         resp.sendRedirect("inicio.jsp");

@@ -15,10 +15,10 @@ import java.util.List;
 public interface DAO<T> {
     List<T> obtenerTodo();
     T buscar(T t);
-    List<T> login(String correo, String contrasenia);
+    List<T> login(String correo);
     void nuevo(T t);
     void actualizar(T t, String[] parametros);
     void borrar(T t);
-    List<T> obtenerTodo(long id);
+    List<T> obtenerTodo(int id);
     //void nuevo();
 }

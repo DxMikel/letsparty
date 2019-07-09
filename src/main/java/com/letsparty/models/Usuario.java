@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  * @author Lesser
  */
 @Entity
-@Table(schema = "letsparty_test2" , name= "usuarios")
+@Table(schema = "letsparty" , name= "usuarios")
 public class Usuario {
          @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
