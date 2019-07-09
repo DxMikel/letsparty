@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -71,5 +72,32 @@ public class UsuarioDAOImp<Usuario> implements DAO<Usuario> {
     @Override
     public void borrar(Usuario t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Usuario> login(String correo, String contrasenia) {
+        String pass = BCrypt.hashpw(contrasenia, BCrypt.gensalt(12));
+        Query query = entityManager.createQuery("u.contrasenia from Usuario u where u.correo = :correoUsuario");
+        query.setParameter("correoUsuario", correo);
+        //query.setParameter("contrasenia", pass);
+        System.out.println(pass);
+        
+        List<Usuario> lista = query.getResultList();
+        System.out.println("la lista es: " + lista);
+        
+        return lista;
+        
+        //Query queryCategoria = entityManager.createQuery("SELECT c FROM Categoria c");
+        //assertNotNull(queryCategoria);
+       /* Usuario algo = new Usuario()
+        List<Usuario> lista = query.getResultList();
+        //assertFalse(categorias.isEmpty());
+        for (Usuario listas: lista) {
+            System.out.println(listas.);
+            System.out.println();
+        }
+        */
+        //return null;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

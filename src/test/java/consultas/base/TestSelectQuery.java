@@ -85,8 +85,18 @@ public class TestSelectQuery {
         query.setParameter("correoUsuario", "a@a.com");
         query.setParameter("contrasenia", "$2a$12$aC103ApXMjBxiK73.//BFOyMpB/TvFBjEKOcORmf746/PAp89xdT6");
         boolean algo = BCrypt.checkpw("123", "$2a$12$aC103ApXMjBxiK73.//BFOyMpB/TvFBjEKOcORmf746/PAp89xdT6");
-        List list = query.getResultList();
+        //List<Object[]> list = query.;
+        
+        //Query queryCategoria = entityManager.createQuery("SELECT u FROM Usuario u");
+        assertNotNull(query);
+        List<Usuario> list = query.getResultList();
+        assertFalse(list.isEmpty());
+        for (Usuario usuarios : list) {
+            System.out.println(usuarios.getId_usuario());
+            System.out.println(usuarios.getNombre());
+        }
         //System.out.println(list.get(0).toString().);
+        
         assertNotNull(list);
         assertFalse(!algo);
     }

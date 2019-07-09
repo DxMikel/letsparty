@@ -15,6 +15,7 @@ import java.util.List;
 public interface DAO<T> {
     List<T> obtenerTodo();
     T buscar(T t);
+    List<T> login(String correo, String contrasenia);
     void nuevo(T t);
     void actualizar(T t, String[] parametros);
     void borrar(T t);
