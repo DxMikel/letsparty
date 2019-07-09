@@ -39,16 +39,16 @@ function mostrarBar(datos){
     console.log("hola4");
     var liElemento = document.createElement('li');
     var divContenedor = document.createElement('div');
-   // var imgbar = document.createElement('img');
+  var imgBar = document.createElement('img');
     var nombre = document.createElement('h4');
     var descripcion = document.createElement('h3');
     var horario = document.createElement('h3');
     var horario1 = document.createElement('h3');
     console.log("hola5");
     
-   // imgBar.src = datos.image_url;
-   // imgBar.width = 50;
-   // imgBar.heigth=50;
+      imgBar.src = datos.imagen;
+   imgBar.width = 50;
+   imgBar.heigth=50;
     
     nombre.innerText = datos.nombre;
     descripcion.innerText = datos.descripcion;
@@ -64,7 +64,7 @@ function mostrarBar(datos){
     divContenedor.appendChild(descripcion);
     divContenedor.appendChild(horario);
     divContenedor.appendChild(horario1);
-    //divContenedor.appendChild(imgBar);
+    divContenedor.appendChild(imgBar);
     
     console.log("hola7");
     liElemento.appendChild(divContenedor);
