@@ -30,6 +30,9 @@ public class Bar {
     private String nombre;
     private String descripcion;
     private int estatus;
+    @Column(name = "imagenes")
+    private String imagen;
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
     
@@ -74,6 +77,16 @@ public class Bar {
     public void setEstatus(int estatus) {
         this.estatus = estatus;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
 
     public Date getFecha_registro() {
         return fecha_registro;
@@ -131,9 +144,14 @@ public class Bar {
         this.id_ubicacion = id_ubicacion;
     }
 
+   // @Override
+    //public String toString() {
+      //  return "Bar{" + "id_bar=" + id_bar + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + ", horario_abierto=" + horario_abierto + ", horario_cerrado=" + horario_cerrado + ", id_administrador=" + id_administrador + ", id_tematica=" + id_tematica + ", id_categoria=" + id_categoria + ", id_ubicacion=" + id_ubicacion + '}';
+    //}
+
     @Override
     public String toString() {
-        return "Bar{" + "id_bar=" + id_bar + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estatus=" + estatus + ", fecha_registro=" + fecha_registro + ", horario_abierto=" + horario_abierto + ", horario_cerrado=" + horario_cerrado + ", id_administrador=" + id_administrador + ", id_tematica=" + id_tematica + ", id_categoria=" + id_categoria + ", id_ubicacion=" + id_ubicacion + '}';
+        return "Bar{" + "id_bar=" + id_bar + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estatus=" + estatus + ", imagen=" + imagen + ", fecha_registro=" + fecha_registro + ", horario_abierto=" + horario_abierto + ", horario_cerrado=" + horario_cerrado + ", id_administrador=" + id_administrador + ", id_tematica=" + id_tematica + ", id_categoria=" + id_categoria + ", id_ubicacion=" + id_ubicacion + '}';
     }
     
     
