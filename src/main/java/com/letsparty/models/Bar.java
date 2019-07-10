@@ -33,6 +33,7 @@ public class Bar {
     @Column(name = "imagenes")
     private String imagen;
     
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_registro;
     
@@ -45,7 +46,7 @@ public class Bar {
     private int id_tematica;
     private int id_categoria;
     private int id_ubicacion;
-
+    
     public int getId_bar() {
         return id_bar;
     }
