@@ -5,7 +5,7 @@
  */
 package consultas.base;
 
-import com.letsparty.models.Bar;
+//import com.letsparty.models.Bar;
 import com.letsparty.models.Categoria;
 import com.letsparty.models.Comentario;
 //import com.letsparty.models.Comentario;
@@ -29,7 +29,7 @@ import org.junit.Test;
  */
 public class TestinsertarQuery {
     private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
-    
+    /*
     
   // @Test
        public void testUsuarioQuery(){
@@ -314,6 +314,6 @@ public class TestinsertarQuery {
         System.out.println("Se cerro con exito");
        
     }    
-    
+    */
     
 }

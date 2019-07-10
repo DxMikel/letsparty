@@ -60,7 +60,4 @@ public class LogOutServlet extends HttpServlet{
         }
         resp.sendRedirect("index.html");
     }
-    
-    
-    
 }

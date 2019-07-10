@@ -30,12 +30,12 @@ public class ServicioBar {
     public Response obtenerBar(){
          EntityManager entityManager= null ;
         try{
-           System.out.println("servicios4");
+           //System.out.println("servicios4");
                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("LetsPartyPU");
                  entityManager = emf.createEntityManager();
         List<Bar> bar = entityManager.createQuery("SELECT b FROM Bar b")
                 .getResultList();
-                System.out.println("servicios5");
+                //System.out.println("servicios5");
                 
                 //se agrego para guardarlo en un json
                 String jsonrespuesta= new Gson().toJson(bar);
@@ -52,7 +52,7 @@ public class ServicioBar {
             RespuestaServicio rs = new RespuestaServicio();
                     rs.setCodigo(0);
                     rs.setMensaje(e.getMessage());
-                    System.out.println("servicios6");
+                    //System.out.println("servicios6");
             return Response
                     .status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(rs)
