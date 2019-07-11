@@ -41,17 +41,19 @@ function mostrarImagen(datos){
     var liElemento = document.createElement('li');
     var divContenedor = document.createElement('div');
   var imgImagen = document.createElement('img');
+  var tipo = document.createElement('h3');
+  
 
     console.log("hola5");
     
       imgImagen.src = datos.url;
    imgImagen.width = 50;
    imgImagen.heigth=50;
-
-   console.log("hola6");
+tipo.innerText = datos.tipo_imagen;
     
     divContenedor.id = datos.id_imagen_bar;
     divContenedor.appendChild(imgImagen);
+    divContenedor.appendChild(tipo);
     
     console.log("hola7");
     liElemento.appendChild(divContenedor);
