@@ -26,9 +26,10 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 @WebServlet(name = "RegistrarUsuario", urlPatterns = {("/registro")})
 public class RegistrarUsuario extends HttpServlet {
+
     String apellidoMaterno = "";
     String apellidoPaterno = "";
-    
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Antes de daoimplements");
@@ -36,7 +37,7 @@ public class RegistrarUsuario extends HttpServlet {
         System.out.println("Despues de dao implements");
         resp.setContentType("text/html");
         //String nombre = req.getParameter("username");
-        
+
         String[] apellidos = req.getParameter("usernameApellido").split(" ");
         if (apellidos.length == 2) {
             apellidoPaterno = apellidos[0];
@@ -61,8 +62,9 @@ public class RegistrarUsuario extends HttpServlet {
         nuevoUsuario.setFecha_registro(new Date());
 
         //System.out.println(nuevoUsuario);
+        //usuario.login("a@a.com", "123");
 
-        usuario.nuevo(nuevoUsuario);
+        //usuario.nuevo(nuevoUsuario);
         resp.sendRedirect("inicio.jsp");
     }
 

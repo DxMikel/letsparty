@@ -39,5 +39,25 @@ public class LogOutServlet extends HttpServlet{
         }
         resp.sendRedirect("index.html");
     }
-    
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //super.doGet(req, resp); //To change body of generated methods, choose Tools | Templates.
+        resp.setContentType("text/html");
+        Cookie cookieActiva = null;
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for(Cookie cooki: cookies){
+                if (cooki.getName().equals("email")) {
+                    cookieActiva = cooki;
+                    break;
+                }
+            }
+        }
+        if (cookieActiva != null) {
+            cookieActiva.setMaxAge(0);
+            resp.addCookie(cookieActiva);
+        }
+        resp.sendRedirect("index.html");
+    }
 }

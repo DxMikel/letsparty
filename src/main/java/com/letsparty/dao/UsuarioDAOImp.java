@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -26,10 +27,11 @@ public class UsuarioDAOImp<Usuario> implements DAO<Usuario> {
     public UsuarioDAOImp() {
     }
     @Override
-    public List<Usuario> obtenerTodo(long id) {
+    public List<Usuario> obtenerTodo(int id) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         Query query = entityManager.createQuery("from Usuario u where u.id_usuario = :idUsuario");
         query.setParameter("idUsuario", id);
+        System.out.println(query);
         List list = query.getResultList();
         //System.out.println(list);
         return list;
@@ -39,10 +41,19 @@ public class UsuarioDAOImp<Usuario> implements DAO<Usuario> {
     public List<Usuario> obtenerTodo() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         Query query = entityManager.createQuery("from usuarios where id_usuario = :idUsuario");
-        //query.setParameter("idusuario", id);
+        query.setParameter("idusuario", 2);
         List list = query.getResultList();
         System.out.println(list);
         return list;
+    }
+    @Override
+    public List<Usuario> login(String correo) {
+        Query query = entityManager.createQuery("from Usuario u where u.correo = :correoUsuario");
+        query.setParameter("correoUsuario", correo);
+        //query.setParameter("contrasenia", pass);
+        List lista = query.getResultList();
+        //System.out.println("la lista es: " + lista);
+        return lista;
     }
 
     @Override
@@ -72,4 +83,6 @@ public class UsuarioDAOImp<Usuario> implements DAO<Usuario> {
     public void borrar(Usuario t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 }

@@ -25,7 +25,7 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class TestSelectQuery {
 
-
+/*
     private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
 //private static final String PERSISTENCE_UNIT_NAME = "LetsPartyPU";
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -65,6 +65,14 @@ public class TestSelectQuery {
         assertNotNull(ubicacion1);
         System.out.println(ubicacion1);
 
+        Query queryUsuario = entityManager.createQuery("SELECT u FROM Usuario u where u.correo = :correo  AND u.contrasenia= :contrasenia");
+        queryUsuario.setParameter("correo", "julioCampos@gmail.com");
+        String contrasenia = ("julio12352");
+        assertNotNull(queryUsuario);
+        queryUsuario.setParameter("contrasenia", contrasenia);
+        Usuario usuario = (Usuario) queryUsuario.getSingleResult();
+        assertNotNull(usuario);
+        System.out.println(usuario);
 
         
        Query queryUsuario = entityManager.createQuery("SELECT u FROM Usuario u where "
@@ -94,8 +102,18 @@ public class TestSelectQuery {
         query.setParameter("correoUsuario", "a@a.com");
         query.setParameter("contrasenia", "$2a$12$aC103ApXMjBxiK73.//BFOyMpB/TvFBjEKOcORmf746/PAp89xdT6");
         boolean algo = BCrypt.checkpw("123", "$2a$12$aC103ApXMjBxiK73.//BFOyMpB/TvFBjEKOcORmf746/PAp89xdT6");
-        List list = query.getResultList();
+        //List<Object[]> list = query.;
+        
+        //Query queryCategoria = entityManager.createQuery("SELECT u FROM Usuario u");
+        assertNotNull(query);
+        List<Usuario> list = query.getResultList();
+        assertFalse(list.isEmpty());
+        for (Usuario usuarios : list) {
+            System.out.println(usuarios.getId_usuario());
+            System.out.println(usuarios.getNombre());
+        }
         //System.out.println(list.get(0).toString().);
+        
         assertNotNull(list);
         assertFalse(!algo);
     }
@@ -119,5 +137,5 @@ public class TestSelectQuery {
         } else {
             System.out.println("It does not match");
         }
-    }
+    }*/
 }
