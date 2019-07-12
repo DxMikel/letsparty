@@ -36,9 +36,7 @@ public class ServicioReservacion {
                  entityManager = emf.createEntityManager();
         List<Reservacion> reservacion = entityManager.createQuery("SELECT r FROM Reservacion r")
                 .getResultList();
-            // List<Reservacion>  id_usuario = entityManager.createQuery("SELECT r.id_usuario FROM Reservacion r").getResultList();
-       //reservacion = entityManager.createQuery("SELECT u.nombre u FROM Usuario u where u.id_usuario = " + id_usuario )
-           //     .getResultList();
+            
          //       System.out.println(id_usuario);
                 
                 //se agrego para guardarlo en un json

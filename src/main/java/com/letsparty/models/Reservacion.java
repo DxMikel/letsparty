@@ -31,7 +31,7 @@ public class Reservacion {
     private int estatus;
      
     private int id_cover;
-    private int id_usuario;
+    private String nombre_usuario;
     private int id_area;
     private int id_bar;
 
@@ -83,12 +83,12 @@ public class Reservacion {
         this.id_cover = id_cover;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
     public int getId_area() {
@@ -109,7 +109,7 @@ public class Reservacion {
 
     @Override
     public String toString() {
-        return "Reservacion{" + "id_reservacion=" + id_reservacion + ", fecha_registro=" + fecha_registro + ", numero_personas=" + numero_personas + ", fecha_reservacion=" + fecha_reservacion + ", estatus=" + estatus + ", id_cover=" + id_cover + ", id_usuario=" + id_usuario + ", id_area=" + id_area + ", id_bar=" + id_bar + '}';
+        return "Reservacion{" + "id_reservacion=" + id_reservacion + ", fecha_registro=" + fecha_registro + ", numero_personas=" + numero_personas + ", fecha_reservacion=" + fecha_reservacion + ", estatus=" + estatus + ", id_cover=" + id_cover + ", nombre_usuario=" + nombre_usuario + ", id_area=" + id_area + ", id_bar=" + id_bar + '}';
     }
     
 
