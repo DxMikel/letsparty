@@ -32,9 +32,9 @@ public class RegistrarUsuario extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Antes de daoimplements");
+        //System.out.println("Antes de daoimplements");
         UsuarioDAOImp usuario = new UsuarioDAOImp<Usuario>();
-        System.out.println("Despues de dao implements");
+        //System.out.println("Despues de dao implements");
         resp.setContentType("text/html");
         //String nombre = req.getParameter("username");
 
@@ -64,7 +64,7 @@ public class RegistrarUsuario extends HttpServlet {
         //System.out.println(nuevoUsuario);
         //usuario.login("a@a.com", "123");
 
-        //usuario.nuevo(nuevoUsuario);
+        usuario.nuevo(nuevoUsuario);
         resp.sendRedirect("inicio.jsp");
     }
 
