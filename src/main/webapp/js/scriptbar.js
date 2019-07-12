@@ -47,7 +47,15 @@ function mostrarBar(datos){
     
     divContenedor.className = "card mb-3 col-sm-4 primerFila " + datos.id_bar;
     divContenedor.onclick = function(){
-        alert("el id del bar es: " + datos.id_bar);
+        //alert("el id del bar es: " + datos.id_bar);
+        localStorage.setItem("idBar", datos.id_bar);
+        if(localStorage.getItem("idBar") !== null){
+            var idBar = localStorage.getItem("idBar");
+            //window.location.replace("http://localhost:8080/LetsParty/api/imagenes/" + datos.id_bar);
+            window.location.replace("http://localhost:8080/LetsParty/vistaBar.jsp");
+        }else {
+            alert("Hubo un error al intentar obtener el id");
+        }
     };
     
     imgBar.src=datos.imagen;
