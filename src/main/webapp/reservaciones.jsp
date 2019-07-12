@@ -22,61 +22,16 @@
         <table class="table table-hover sortable" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col"># Personas</th>
                     <th scope="col">Fecha y hora</th>
-                    <th scope="col">Botones</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>6 </td>
-                    <td>
-                        un dia pues
-                    </td>
-                    <td>
-                        <div>
-                            <button type="button" class="btn btn-dark">Confirmar</button>
-                            <button type="button" class="btn btn-dark">Modificar</button>
-                            <button type="button" class="btn btn-dark">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>15 personas</td>
-                    <td>12:00</td>
-                    <td>
-                        <div>
-                            <button type="button" class="btn btn-dark">Confirmar</button>
-                            <button type="button" class="btn btn-dark">Modificar</button>
-                            <button type="button" class="btn btn-dark">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry </td>
-                    <td>Mendez</td>
-                    <td>15 personas</td>
-                    <td>20:00</td>
-                    <td>
-                        <div>
-                            <button type="button" class="btn btn-dark">Confirmar</button>
-                            <button type="button" class="btn btn-dark">Modificar</button>
-                            <button type="button" class="btn btn-dark">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-
-
+            <tbody id = "contenido">
+                <% if (application.getAttribute("mensajerecibido") != null) {%>
+                <%= application.getAttribute("mensajerecibido")%>
+                <% }%>
             </tbody>
 
         </table>
@@ -90,5 +45,6 @@
 
         <!--<script src='datepicker.js' type='text/javascript'></script>-->
         <script src="js/tabla.js"></script>
+        <script src="js/reservacion.js"></script>
     </body>
 </html>

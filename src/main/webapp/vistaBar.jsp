@@ -14,7 +14,6 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
         <link rel="stylesheet" type="text/css" href="styles/barchido.css"/>
         <script src="https://kit.fontawesome.com/24466b86ce.js"></script>
-        <script type="text/javascript" src="js/algo.js"></script>
     </head>
     <body>
         
@@ -44,16 +43,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="inicio.jsp">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href=".\logout">Salir</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="logout" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
         </div>
@@ -72,12 +65,13 @@
 
         <div class="container carrucel">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators listaCarrusel">
+                <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    
                 </ol>
-                <div class="carousel-inner divImgCarrusel">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img  class="imgCarrucel" src="img/Bienvenido2.jpg" class="d-block w-100" alt="...">
                     </div>

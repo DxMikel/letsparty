@@ -22,6 +22,7 @@ public class TestConectionJPAHibernate {
     @Test
     public void testConection(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCES_UNIT_NAME);
+        System.out.println(PERSISTENCES_UNIT_NAME);
         assertNotNull(emf);
         System.out.println("Creo el EntityManagerFactory");
         EntityManager emanager = emf.createEntityManager();

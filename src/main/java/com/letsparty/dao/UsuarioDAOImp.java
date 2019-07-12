@@ -71,7 +71,7 @@ public class UsuarioDAOImp<Usuario> implements DAO<Usuario> {
         entityManager.getTransaction().begin();
         entityManager.persist(t);
         entityManager.getTransaction().commit();
-        entityManager.close();
+        //entityManager.close();
     }
 
     @Override
