@@ -6,7 +6,7 @@
 package RESTfull;
 
 import com.google.gson.Gson;
-import com.letsparty.models.Bar;
+import com.letsparty.models.Reservacion;
 import com.letsparty.servicio.respuesta.RespuestaServicio;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -23,23 +23,24 @@ import javax.ws.rs.core.Response;
  *
  * @author Lesser
  */
-@Path("/bares")
-public class ServicioBar {
-    
+ 
+public class Servicioobtenerreservacion {
     @GET
+    @Path("/reservaciones/bar/{idreservacionbar}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerBar(){
+   
+    public Response obtenerReservacion(@PathParam("idreservacionbar") int idreservacionbar){
          EntityManager entityManager= null ;
         try{
            //System.out.println("servicios4");
                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("LetsPartyPU");
                  entityManager = emf.createEntityManager();
-        List<Bar> bar = entityManager.createQuery("SELECT b FROM Bar b")
+        List<Reservacion> reservacion = entityManager.createQuery("SELECT r FROM Reservacion r where r.id_bar = " + idreservacionbar)
                 .getResultList();
                 //System.out.println("servicios5");
                 
                 //se agrego para guardarlo en un json
-                String jsonrespuesta= new Gson().toJson(bar);
+                String jsonrespuesta= new Gson().toJson(reservacion);
                 return Response.ok().entity(jsonrespuesta).build();
      //   return Response.ok().entity(playlist).build();
         }
@@ -61,40 +62,4 @@ public class ServicioBar {
         }
     }
     
-    @GET
-    @Path("/bares/{idBar}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerBar(@PathParam("idBar") int idBar){
-         EntityManager entityManager= null ;
-        try{
-           //System.out.println("servicios4");
-                EntityManagerFactory emf = Persistence.createEntityManagerFactory("LetsPartyPU");
-                 entityManager = emf.createEntityManager();
-        List<Bar> bar = entityManager.createQuery("SELECT b FROM Bar b where b.id_bar = " + idBar)
-                .getResultList();
-                //System.out.println("servicios5");
-                
-                //se agrego para guardarlo en un json
-                String jsonrespuesta= new Gson().toJson(bar);
-                return Response.ok().entity(jsonrespuesta).build();
-     //   return Response.ok().entity(playlist).build();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            if(entityManager != null){
-                if(entityManager.getTransaction() != null){
-                    entityManager.getTransaction().rollback();
-                }
-            }
-            RespuestaServicio rs = new RespuestaServicio();
-                    rs.setCodigo(0);
-                    rs.setMensaje(e.getMessage());
-                    //System.out.println("servicios6");
-            return Response
-                    .status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(rs)
-                    .build();
-        }
-    }
 }
-

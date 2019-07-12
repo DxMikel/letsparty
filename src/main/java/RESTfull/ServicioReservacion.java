@@ -6,9 +6,7 @@
 package RESTfull;
 
 import com.google.gson.Gson;
-
 import com.letsparty.models.Reservacion;
-import com.letsparty.models.Usuario;
 import com.letsparty.servicio.respuesta.RespuestaServicio;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -16,6 +14,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -37,7 +36,7 @@ public class ServicioReservacion {
         List<Reservacion> reservacion = entityManager.createQuery("SELECT r FROM Reservacion r")
                 .getResultList();
             
-         //       System.out.println(id_usuario);
+         //       System.out.println();
                 
                 //se agrego para guardarlo en un json
                 String jsonrespuesta= new Gson().toJson(reservacion);
@@ -63,5 +62,6 @@ public class ServicioReservacion {
     }
     
 }
-    
+
+
 
