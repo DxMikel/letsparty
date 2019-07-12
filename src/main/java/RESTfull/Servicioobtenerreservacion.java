@@ -23,10 +23,9 @@ import javax.ws.rs.core.Response;
  *
  * @author Lesser
  */
- 
+  @Path("/reservaciones/bar/{idreservacionbar}")
 public class Servicioobtenerreservacion {
     @GET
-    @Path("/reservaciones/bar/{idreservacionbar}")
     @Produces(MediaType.APPLICATION_JSON)
    
     public Response obtenerReservacion(@PathParam("idreservacionbar") int idreservacionbar){

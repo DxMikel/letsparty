@@ -11,7 +11,7 @@ function obtenerIdBar() {
         idBar = localStorage.getItem("idBar");
         //window.location.replace("http://localhost:8080/LetsParty/api/imagenes/" + datos.id_bar);
         consultarImagenes(idBar);
-        
+
     } else {
         alert("Hubo un error al intentar obtener el id");
     }
@@ -26,10 +26,12 @@ function consultarImagenes(idBar) {
                 var respuesta = this.responseText;
                 //console.log(respuesta);
                 parsearImagen(respuesta);
+                //consultarDatosBar(idBar);
             }
         }
     };
     var url = 'http://localhost:8080/LetsParty/api/imagenes/' + idBar;
+    console.log("el id de bar es: " + idBar);
 
     //console.log(url);
     request.open('GET', url, true);
@@ -49,36 +51,62 @@ function parsearImagen(datos) {
     }
 }
 
-function cambiarVista(imagen){
+function cambiarVista(imagen) {
     const imgLogo = document.querySelector("#imgLogo");
+    const imgMenu = document.querySelector(".menuImg");
+    var contador = 0;
+    //console.log("si funciona hasta aqui");
     //imgLogo.src = imagen.url
-    if(imagen.tipo_imagen === "logo"){
-        imgLogo.src=imagen.url;
+    console.log(imagen.url);
+    if (imagen.tipo_imagen === "logo") {
+        imgLogo.src = imagen.url;
+        //imgLogo.className = "encabezado";
     }
-    localStorage.removeItem("idBar");
+    if (imagen.tipo_imagen === "menu") {
+        imgMenu.src = imagen.url;
+    }
+    //localStorage.removeItem("idBar");
+    infoBar(idBar);
 }
 
-function mostrarImagen(datos) {
-    console.log("hola4");
-    var liElemento = document.createElement('li');
-    var divContenedor = document.createElement('div');
-    var imgImagen = document.createElement('img');
-    var tipo = document.createElement('h3');
+function infoBar(idBar) {
+    var request = new XMLHttpRequest();
+    //console.log("hola");
+    request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                var respuesta = this.responseText;
+                //console.log(respuesta);
+                parsearInfo(respuesta);
+                //consultarDatosBar(idBar);
+            }
+        }
+    };
+    var url = 'http://localhost:8080/LetsParty/api/bares/consulta/' + idBar;
+    //console.log("el id de bar es: " +idBar);
 
-
-    console.log("hola5");
-
-    imgImagen.src = datos.url;
-    imgImagen.width = 50;
-    imgImagen.heigth = 50;
-    tipo.innerText = datos.tipo_imagen;
-
-    divContenedor.id = datos.id_imagen_bar;
-    divContenedor.appendChild(imgImagen);
-    divContenedor.appendChild(tipo);
-
-    console.log("hola7");
-    liElemento.appendChild(divContenedor);
-    listaImagen.appendChild(liElemento);
+    //console.log(url);
+    request.open('GET', url, true);
+    request.send();
 }
 
+function parsearInfo(datosBar) {
+    var bares = JSON.parse(datosBar);
+    //console.log("hola2");
+    //console.log(imagenes);
+    for (i = 0; i < bares.length; i++) {
+        var bar = bares[i];
+        //console.log(recipe);
+        //mostrarImagen(imagen);
+        cambiarInfo(bar);
+    }
+}
+
+function cambiarInfo(bar) {
+    const nombreBar = document.querySelector(".nombreBar");
+    const descripcionBar = document.querySelector(".descripcionBar");
+    
+    nombreBar.innerText = bar.nombre;
+    
+    descripcionBar.innerText = bar.descripcion;
+}
